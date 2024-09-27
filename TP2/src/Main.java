@@ -1,15 +1,12 @@
 import java.io.File;
 import java.util.Scanner;
 import controladores.ProcesadorDeTexto;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
 
 public class Main {
     public static void main(String[] args) {
 
         //Paso 1 ) eliminar archivos en la carpeta archivoTexto
-        String rutaYArchivo = "./TP2/src/archivoTexto/Frases.txt";
+        String rutaYArchivo = "./src/archivoTexto/Frases.txt";
 
         File archivo = new File(rutaYArchivo);
         if (archivo.delete()) {
@@ -130,7 +127,7 @@ public class Main {
                     System.out.println("Opción: Generar fichero txt/csv con las frases");
                     // Llamar a la función correspondiente
                     //crear archivo  txt/csv con las frases
-                    procesador.generarFichcero();
+                    procesador.generarFichero();
                     procesador.imprimirTotalDeFrases();
 
                     break;
@@ -142,29 +139,4 @@ public class Main {
         }
         nuevoScanner.close();
     }
-
-    //función Menú de opciones.
-    //función para mostrar opciones
-
-
-
-    /*"P n2
-    Consigna
-    Crear una aplicacion de consola que procese texto y permita realizar los siguientes puntos:
-    a- Mostrar saludo de bienvenida
-    b- Permitir ingresar texto
-    c- Mostrar por pantalla la cantidad de palabras ingresadas
-    d- Mostrar por pantalla la cantidad de vocales ingresadas
-    e- Mostrar por pantalla la cantidad de consonantes ingresadas
-    Opcionales
-    f- Mostrar mensaje de error y no permitir al usuario ingresar frases con mas de 140
-    caracteres
-    g- Permitir al usuario guardar las frases
-    h- Imprimir por pantalla el total de frases
-    i- Permitir al usuario seleccionar frases de un listado, editarlas y guardarlas
-    j- Generar fichero txt/csv con las frases"
-
-    mandar ahí: liferreira90@gmail.com */
-
-
 }

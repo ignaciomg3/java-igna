@@ -48,7 +48,7 @@ public class ProcesadorDeTexto {
     }
 
     public int contarPalabras() {
-         this.cantidadPalabras = this.texto.split(" ").length;
+         this.cantidadPalabras = this.texto.split("[.,!? ]+").length;
          return this.cantidadPalabras;
     }
 
@@ -117,7 +117,7 @@ public class ProcesadorDeTexto {
 
 
 
-    public void generarFichcero() {
+    public void generarFichero() {
 
         try (FileWriter fileWriter = new FileWriter(this.fileName)) {
             // Itera sobre cada objeto Conteo en la lista
@@ -127,10 +127,10 @@ public class ProcesadorDeTexto {
                 fileWriter.write(frase + "\n"); // Escribe el texto de la frase en el archivo
 
             }
-            //fileWriter.write(procesador.getTexto());
+
             fileWriter.close();
             System.out.println("Texto guardado en " + this.fileName);
-            //mostrar contenido del archivo.
+
 
 
 
